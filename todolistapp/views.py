@@ -45,9 +45,11 @@ def todo_list(request):
         serializer = TodoSerializer(todo, many=True)
         return Response(serializer.data)
 
+
 @api_view(['POST'])
 @permission_classes((permissions.AllowAny,))
 def todo_create_task(request):
+    # return Response(request.data)
     if request.method == 'POST':
         serializer = TodoSerializer(data=request.data)
         if serializer.is_valid():

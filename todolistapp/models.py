@@ -6,7 +6,7 @@ class Todolist(models.Model):
     update_date  = models.DateTimeField(auto_now=True)
     published = models.BooleanField(default=True)
     task = models.CharField(max_length=200, blank=False)
-    checked = models.BooleanField(default=True)
+    checked = models.BooleanField(default=False)
     order = models.IntegerField(null=True, unique=False, default=0)
 
     def __str__(self):
